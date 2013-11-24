@@ -57,7 +57,7 @@ def createqn(request):
 </tr>
 </body>
 </html>
-        '''%(request.POST['title'],request.POST['desc'],request.POST['ip'],request.POST['op'],request.POST['sip'],request.POST['sop'],request.POST['time'],request.user.username,request.POST['contest'])
+        '''%(request.POST['title'],request.POST['desc'],request.POST['ip'],request.POST['op'],request.POST['sip'],request.POST['sop'],request.POST['time'],request.POST['author'],request.POST['contest'])
         f = open('desc.html','w')
         f.write(html)
         f.close()

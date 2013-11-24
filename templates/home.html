@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "navstud.html" %}
+    <h1>Welcome to Coderpool</h1>
+    <h3>Registration details</h3>
+        <table class='table'>
+           <tr>
+                <td>Username</td>
+                <td>{{ p.contestant.user.email }}</td>
+           </tr>
+           <tr>
+                <td>Password</td>
+                <td>{{ p.contestant.password }}</td>
+           </tr>
+           <tr>
+                <td>Contest</td>
+                <td>{{ contest }}</td>
+           </tr>
+           <tr>
+                <td>Current Score</td>
+                <td>{{ p.score }}</td>
+           </tr>
+           <tr>
+                <td>Request Switch Contest</td>
+                <td><a href='/contestant/changecontest/' class='btn btn-warning btn-large'>Change Contest</a></td>
+           </tr>
+        </table>
+{% endblock %}

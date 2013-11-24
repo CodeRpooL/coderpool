@@ -1,0 +1,49 @@
+
+<html>
+<body>
+<h1>Buddy Memory Allocator</h1>
+<h3> Description</h3>
+                    Your task is to implement a buddy memory manager and simulate it at work. You will be given the upper and lower sizes admissible for blocks in the system and a list of requests. A request is made for a process and it may either be for a block of a certain size or just an indication of termination. Requests should be attended in a first-come first-served basis. After serving all requests, your program should display the state of the buddy system at that point, indicating which processes are in memory and which blocks are free.
+
+Notice that, whenever there is a request that corresponds to a block of size s, your program should select the block of that size that was most recently declared free. Furthermore, when a block is split in two, the left-one (lower addresses) should be selected before the right-one.
+
+You can assume that the list of requests is such that all requests can always be served. In other words, you can make the following assumptions: no process will request more than the available memory; processes are uniquely identified while active; and no request for process termination is issued before its corresponding request for memory allocation.
+<h3>Input</h3>
+The first line of input consists of two numbers, U and L, that determine the upper (2^U k) and lower (2^L k) block sizes admissable. You can assume U > L > 0. The following input lines are requests being made, one per line. A request is defined by two values, P and S, where P is a capital letter that identifies the process associated with the request, and S ( >= 0) is a number. If S > 0 then it is a memory block request; Otherwise (S=0) it is a request indicating that process P has terminated.                    
+<h3>Output</h3>
+The output must list the state of the buddy immediatly after having served the last request. This corresponds to listing the processes still in memory, if any, and the free blocks (holes) available. Processes and holes must be listed in a left to right order as you traverse the buddy (i.e. from lower addresses towards upper memory addresses). The output format for processes is P:S, P is the process identifier and S its size, and for holes is Hole:S where S is the size of the free block.                    
+<h3>Sample Input</h3>
+<pre>
+10 4
+A 70
+B 35
+C 80
+A 0
+D 60
+B 0
+</pre>
+<h3>Sample Output</h3>
+<pre>
+Hole:128
+Hole:64
+D:60
+C:80
+Hole:128
+Hole:512                    
+</pre>
+<table border=1>
+<tr>
+    <td>Time limit:</td>
+    <td>5</td>
+    <td>File Size:</td>
+    <td>1000 bytes</td>
+</tr>
+<tr>
+    <td>Author:</td>
+    <td>rajeevs</td>
+    <td>Contest:</td>
+    <td>CODE20</td>
+</tr>
+</body>
+</html>
+        

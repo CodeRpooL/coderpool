@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+  {% include "studnav.html" %}
+  <script src='{% STATIC_URL %}/vanadium/dist/vanadium.js' type='text/javascript'></script>
+  <link href="{% STATIC_URL %}/vanadium/css/style.css" rel="stylesheet" type="text/css" />
+    <title>Register New User</title>
+    <h1>Welcome to Coderpool</h1>
+    <form method='post'>
+        {% csrf_token %}
+        <table class='table table-hover'>
+            <tr>
+                <td>Username</td>
+                <td>{{ u.email }}</td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type='password' name='password' id='password' class=':required :min_length;8'></td>
+            </tr>
+            <tr>
+                <td>Repeat Password</td>
+                <td><input type='password' name='password' class=':required :same_as;password'></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><select name='gender'>
+                        <option value='Male'>Male</option>
+                        <option value='Female'>Female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Department</td>
+                <td><select name='dept'>
+                        <option value='CS'>CSE</option>
+                        <option value='EE'>EEE</option>
+                        <option value='EC'>ECE</option>
+                        <option value='ME'>Mechanical</option>
+                        <option value='CE'>Civil</option>
+                        <option value='CH'>Chemical</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Contest</td>
+                <td><select name='contest'>
+                        <option value='1'>Coderpool</option>
+                        <option value='2'>Coderpool Junior</option>
+                        <option value='3'>The Girls Who Code</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type='submit' class='btn btn-large btn-success'></td>
+            </tr>
+        </table>
+    </form>
+
+{% endblock %}

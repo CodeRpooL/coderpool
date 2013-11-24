@@ -1,0 +1,24 @@
+<html>
+<head>
+<link type=text/css rel='stylesheet' href='{{ STATIC_URL }}main.css'>
+<link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<script src="{{ STATIC_URL }}jquery.js"></script>
+<script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
+</head>
+<!--Author:Rajeev S<rajeevs1992@gmail.com -->
+<!--Govt. Engineering College Thrissur -->
+<script>
+    if($.browser.msie){
+        window.location.replace('/browser')
+    }
+</script>
+	<body vlink=blue>
+	<div class=content>
+		{% block content %}
+		{% endblock %}
+	</div>
+	</body>
+    <div id=footer>
+        Developed by <a href=mailto:rajeevs1992@gmail.com>Rajeev S </a>,Dept. Of CSE,Govt Engineering College,Thrissur.
+    </div>
+</html>

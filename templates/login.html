@@ -1,0 +1,31 @@
+<html>
+	<head>
+<link type=text/css rel='stylesheet' href='{{ STATIC_URL }}main.css'>
+<link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<script src="{{ STATIC_URL }}jquery.js"></script>
+<script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	<title>Login</title>
+    <div class=hero-unit>
+    <h1><div style='font-family:sanskrit'>The Coderpool</div>
+    <small>Govt Engineering College Thrissur</small></h1>
+    <br><br>
+	<div class=center>
+	<h3>Sign In Using Your Google Account</h3>
+    <table >
+        <tr>
+            <td>
+                <a href="{% url socialauth_begin 'google-oauth2' %}">
+                    <img src='http://coderpool.site90.com/login.png'>
+                </a>
+            </td>
+        </tr>
+    </table>
+	</div>
+	</div>
+	</body>
+    <div id=footer>
+        Developed by <a href=mailto:rajeevs1992@gmail.com>Rajeev S </a>,Dept. Of CSE,Govt Engineering College,Thrissur
+    </div>
+</html>

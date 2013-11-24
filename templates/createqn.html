@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "navadmin.html" %}
+    <h1>Create Question</h1>
+    <h3>Create Question</h3>
+    <form method='post'>
+    {% csrf_token %}
+        <table class='table table-hover'>
+           <tr>
+                <td>Title</td>
+                <td>
+                    <input type='text' maxlength='100' name='title'>
+                </td>
+           </tr>
+           <tr>
+                <td>Description</td>
+                <td>
+                    <textarea rows='20' cols='100' style='width:500px' name='desc'>
+                    </textarea>
+                </td>
+           </tr>
+           <tr>
+                <td>Input</td>
+                <td>
+                    <textarea rows='10' cols='100' name='ip' style='width:500px'>
+                    </textarea>
+                </td>
+           </tr>
+           <tr>
+                <td>Output</td>
+                <td>
+                    <textarea rows='10' cols='100' name='op' style='width:500px'>
+                    </textarea>
+                </td>
+           </tr>
+           <tr>
+                <td>Sample Input</td>
+                <td>
+                    <textarea rows='10' cols='100' name='sip' style='width:500px'>
+                    </textarea>
+                </td>
+           </tr>
+           <tr>
+                <td>Sample Output</td>
+                <td>
+                    <textarea rows='10' cols='100' name='sop' style='width:500px'>
+                    </textarea>
+                </td>
+           </tr>
+           <tr>
+                <td>Time limit</td>
+                <td>
+                    <input type='text' name='time'>
+                </td>
+           </tr>
+           <tr>
+                <td>Contest</td>
+                <td>
+                    <input type='text' name='contest'>
+                </td>
+           </tr>
+           <tr>
+                <td><input type='submit' class='btn btn-large btn-success'></td>
+           </tr>
+        </table>
+    </form>
+{% endblock %}

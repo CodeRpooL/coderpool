@@ -1,4 +1,4 @@
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 
@@ -7,18 +7,12 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+import dj_database_url
+DATABASES={}
 
+DATABASES['default'] =  dj_database_url.config(default='postgres://xfnhglwtrwamrm:SbzoX_Ghj0rFiWvVBKrewHJ5oA@ec2-54-204-31-33.compute-1.amazonaws.com/dd2ovmrosrq8id')
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME':'./db',# Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD':'',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 

@@ -73,7 +73,7 @@ def add(request):
             p = Participant.objects.get(id = i)
             p.added = True
             p.save()
-            s = '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n'%(p.id,'a','a',p.contestant.user.first_name,p.contestant.user.email,p.contestant.gender,'Contestant',p.contestant.user.email,p.contestant.password,p.contestant.dept,'in','blue',p.contestant.dept,'in','1')
+            s = '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n'%(p.id,p.contestant.user.first_name,p.contestant.user.last_name,p.contestant.user.first_name,p.contestant.user.email,p.contestant.gender,'Contestant',p.contestant.user.username,p.contestant.password,p.contestant.dept,'in','blue',p.contestant.dept,'in','1')
             f.write(s)
         f.close()
         w=FileWrapper(file('add.csv'))

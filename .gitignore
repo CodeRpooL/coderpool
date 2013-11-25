@@ -1,4 +1,3 @@
 *.pyc
-settings.py
 heroku.py
 orig.py

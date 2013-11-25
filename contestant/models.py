@@ -6,9 +6,9 @@ CONTEST = ((1,'Coderpool'),(2,'Coderpool Junior'),(3,'The Girls Who Code'))
 
 class Contestant(models.Model):
     user = models.ForeignKey(User)
-    gender = models.CharField(max_length = 1,choices = (('Male','Male'),('Female','Female')))
+    gender = models.CharField(max_length = 10,choices = (('Male','Male'),('Female','Female')))
     password = models.CharField(max_length = 50)
-    dept = models.CharField(max_length=2,choices = DEPT)
+    dept = models.CharField(max_length=10,choices = DEPT)
 
     def __unicode__(self):
         return self.user.username

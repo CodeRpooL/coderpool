@@ -36,7 +36,6 @@ def register(request):
         return HttpResponseRedirect('/home/')
 
 @login_required
-@user_passes_test(lambda u: is_auth(u,'contestant'),login_url='/home/?message=You are unauthorized to view this page')
 def changecontest(request):
     if request.method == 'GET':
         ret = {}

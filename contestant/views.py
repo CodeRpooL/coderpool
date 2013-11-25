@@ -15,7 +15,6 @@ def is_auth(u,g):
     return False
 
 @login_required
-@user_passes_test(lambda u: is_auth(u,'contestant'),login_url='/home/?message=You are unauthorized to view this page')
 def register(request):
     if request.method == 'GET':
         ret = {}

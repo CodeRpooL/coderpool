@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "navadmin.html" %}
+    <h1>Add Users</h1>
+    <h3>List of New Users/Contest Changes</h3>
+    <form method='post'>
+    {% csrf_token %}
+        <table class='table table-hover'>
+            <tr>
+                <th>User</th>
+                <th>Contest</th>
+                <th>Add?</th>
+            </tr>
+            {% for i in p %}
+            <tr>
+                <td>{{ i.contestant.user.email }}</td>
+                <td>{{ i.contest }}</th>
+                <td><input type='checkbox' value='{{ i.id }}' name='user' checked></td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td><input type=submit class='btn btn-large btn-warning'></td>
+            </tr>
+        </table>
+    </form>
+
+{% endblock %}

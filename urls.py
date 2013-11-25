@@ -11,8 +11,10 @@ urlpatterns = patterns('',
     (r'^login/$','login.views.userLogin'),
     (r'^contestant/register/$','contestant.views.register'),
     (r'^contestant/changecontest/$','contestant.views.changecontest'),
+    (r'^contestant/add/$','contestant.views.add'),
 
     (r'^contest/createqn/$','admin.views.createqn'),
+    (r'^contestant/selectcontest/$','contestant.views.selectcontest'),
 
 
     (r'^ajkps/', include(admin.site.urls)),
@@ -22,4 +24,4 @@ urlpatterns = patterns('',
 if settings.DEBUG:
     urlpatterns += patterns('',
         url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
-             'document_root': settings.MEDIA_ROOT,}),)
+             'document_root': settings.STATIC_ROOT,}),)

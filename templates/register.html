@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
   {% include "navstud.html" %}
-  <script src='{% STATIC_URL %}/vanadium/dist/vanadium.js' type='text/javascript'></script>
-  <link href="{% STATIC_URL %}/vanadium/css/style.css" rel="stylesheet" type="text/css" />
+  <script src='{{ STATIC_URL }}/vanadium/dist/vanadium.js' type='text/javascript'></script>
+  <link href="{{ STATIC_URL }}/vanadium/css/style.css" rel="stylesheet" type="text/css" />
     <title>Register New User</title>
     <h1>Welcome to Coderpool</h1>
     <form method='post'>

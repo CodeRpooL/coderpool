@@ -42,12 +42,12 @@ def createqn(request):
 <pre>
 %s
 </pre>
-<table border=1>
+<table border=1 cellpadding=5>
 <tr>
     <td>Time limit:</td>
     <td>%s</td>
-    <td>File Size:</td>
-    <td>1000 bytes</td>
+    <td>Tags</td>
+    <td>%s</td>
 </tr>
 <tr>
     <td>Author:</td>
@@ -57,7 +57,7 @@ def createqn(request):
 </tr>
 </body>
 </html>
-        '''%(request.POST['title'],request.POST['desc'],request.POST['ip'],request.POST['op'],request.POST['sip'],request.POST['sop'],request.POST['time'],request.POST['author'],request.POST['contest'])
+        '''%(request.POST['title'],request.POST['desc'],request.POST['ip'],request.POST['op'],request.POST['sip'],request.POST['sop'],request.POST['time'],request.POST['tags'],request.POST['author'],request.POST['contest'])
         f = open('desc.html','w')
         f.write(html)
         f.close()

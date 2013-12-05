@@ -65,3 +65,6 @@ def createqn(request):
         response = HttpResponse(w,mimetype='text/plain')
         response['Content-Disposition'] = "attachment; filename=%s"%('desc.html')
         return response
+
+def team(request,team):
+    return render_to_response(team+'.html',context_instance=RequestContext(request))

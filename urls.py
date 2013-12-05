@@ -15,6 +15,8 @@ urlpatterns = patterns('',
 
     (r'^contest/createqn/$','admin.views.createqn'),
     (r'^contestant/selectcontest/$','contestant.views.selectcontest'),
+    
+    (r'^team/(?P<team>\w+)/$','admin.views.team'),
 
 
     (r'^ajkps/', include(admin.site.urls)),

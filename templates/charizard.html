@@ -1,0 +1,32 @@
+<html>
+<link type=text/css rel='stylesheet' href='{{ STATIC_URL }}main.css'>
+<script src="{{ STATIC_URL }}jquery.js"></script>
+<script src="{{ STATIC_URL }}backstretch.js"></script>
+<title>The Charizard</title>
+<body>
+<h1 style='font-family:sanskrit;font-size:60px;'>Never laugh at live dragons.....</h1>
+<div style='font-family:sanskrit;font-size:30px;'>
+<p>I write code.</p>
+<p>A lonely web app engineer.</p>
+<p>Lover of functional programming,Lisp and The Big Bang Theory</p>
+<p>I play with numbers,recursions and the chessboard</p>
+<pre style="font-size:30px">
+(defun main(l)
+    (if l
+        (progn 
+            (princ (car l))
+            (main (cdr l))
+        )
+        t
+    )
+)
+(main '("And " "My " "Name " "Is " "Rajeev " "S"))
+</pre>
+</div>
+</body>
+<script language='javascript'>
+$.backstretch("{{ STATIC_URL }}charizard2.jpg");
+</script>
+
+
+</html>
